@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import MoviesPage from './MoviesPage';
+import Home from './Home'
 
 class App extends Component {
 
@@ -21,7 +22,9 @@ class App extends Component {
       <Router>
         <div>
           <NavBar />
-          <Route exact path="/" render={() => <div>Home</div>} />
+          {/* <Route exact path="/" render={() => <div>Home</div>} /> */}
+          <Route exact path="/" render={() => <div><Home /></div>} />
+
           <Route path='/movies' render={routerProps => <MoviesPage {...routerProps} movies={this.state.movies}/>} />
         </div>
       </Router>
