@@ -22,6 +22,12 @@ class App extends Component {
         <div>
           <NavBar />
           <Route exact path="/" render={() => <div>Home</div>} />
+          {/* 
+            ...routerProps object is provided by the Route component and represents its state, 
+            its only attribute is match
+            match is null until the URL (our current route) matches the Route path
+            match's attributes are isExact (e.g. is it the active endpoint or is its child active)
+           */}
           <Route path='/movies' render={routerProps => <MoviesPage {...routerProps} movies={this.state.movies}/>} />
         </div>
       </Router>
